@@ -1,6 +1,6 @@
 docker build -t chokchok/multi-client:latest -t chokchok/multi-client:$SHA -f ./client/Dockerfile ./client
 docker build -t chokchok/multi-server:latest -t chokchok/multi-server:$SHA -f ./server/Dockerfile ./server
-docker build -t chokchok/multi-worker:latest -t chokchok/multi-worker:$SHA -f ./worker/Dockerfie ./worker
+docker build -t chokchok/multi-worker:latest -t chokchok/multi-worker:$SHA -f ./worker/Dockerfile ./worker
 docker push chokchok/multi-client:latest
 docker push chokchok/multi-server:latest
 docker push chokchok/multi-worker:latest
