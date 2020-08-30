@@ -1,16 +1,16 @@
-docker build -t chok-chok/multi-client:latest -t chok-chok/multi-client:$SHA -f ./client/Dockerfile ./client
-docker build -t chok-chok/multi-server:latest -t chok-chok/multi-server:$SHA -f ./server/Dockerfile ./server
-docker build -t chok-chok/multi-worker:latest -t chok-chok/multi-worker:$SHA -f ./worker/Dockerfie ./worker
-docker push chok-chok/multi-client:latest
-docker push chok-chok/multi-server:latest
-docker push chok-chok/multi-worker:latest
+docker build -t chokchok/multi-client:latest -t chokchok/multi-client:$SHA -f ./client/Dockerfile ./client
+docker build -t chokchok/multi-server:latest -t chokchok/multi-server:$SHA -f ./server/Dockerfile ./server
+docker build -t chokchok/multi-worker:latest -t chokchok/multi-worker:$SHA -f ./worker/Dockerfie ./worker
+docker push chokchok/multi-client:latest
+docker push chokchok/multi-server:latest
+docker push chokchok/multi-worker:latest
 
-docker push chok-chok/multi-client:$SHA
-docker push chok-chok/multi-server:$SHA
-docker push chok-chok/multi-worker:$SHA
+docker push chokchok/multi-client:$SHA
+docker push chokchok/multi-server:$SHA
+docker push chokchok/multi-worker:$SHA
 
 kubectl apply -f k8s
-kubectl set image deployments/server-deployment server=chok-chok/multi-server:$SHA
-kubectl set image deployments/client-deployment client=chok-chok/multi-client:$SHA
-kubectl set image deployments/worker-deployment worker=chok-chok/multi-worker:$SHA
+kubectl set image deployments/server-deployment server=chokchok/multi-server:$SHA
+kubectl set image deployments/client-deployment client=chokchok/multi-client:$SHA
+kubectl set image deployments/worker-deployment worker=chokchok/multi-worker:$SHA
  
